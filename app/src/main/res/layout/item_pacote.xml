@@ -10,14 +10,12 @@
         android:id="@+id/item_pacote_cardview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_marginTop="8dp"
-        android:layout_marginHorizontal="8dp"
-        app:cardCornerRadius="10dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,56 +25,55 @@
                 android:id="@+id/item_pacote_image"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
+                android:contentDescription="@string/todo"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sao_paulo_sp"
-                tools:src="@sample/pacotes.json/pacotes/imagem"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                android:contentDescription="@string/todo" />
+                tools:src="@sample/pacotes.json/pacotes/imagem" />
 
             <TextView
                 android:id="@+id/item_pacote_local"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@android:drawable/screen_background_dark"
                 android:padding="8dp"
-                tools:text="@sample/pacotes.json/pacotes/local"
+                android:textColor="@android:color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:background="@android:drawable/screen_background_dark"
                 app:layout_constraintBottom_toBottomOf="@+id/item_pacote_image"
+                app:layout_constraintEnd_toEndOf="@id/item_pacote_image"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/item_pacote_image"
                 app:layout_constraintTop_toTopOf="@+id/item_pacote_image"
-                app:layout_constraintEnd_toEndOf="@id/item_pacote_image"
                 app:layout_constraintVertical_bias="1.0"
-                app:layout_constraintHorizontal_bias="0.0"/>
+                tools:text="@sample/pacotes.json/pacotes/local" />
 
             <View
                 android:id="@+id/item_pacote_divisor"
                 android:layout_width="0dp"
                 android:layout_height="3dp"
                 android:background="@android:color/holo_orange_dark"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_pacote_image"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_pacote_image" />
+
             <TextView
                 android:id="@+id/item_pacote_dias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="@sample/pacotes.json/pacotes/dias"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_pacote_divisor"
-                app:layout_constraintHorizontal_bias="0.0"
                 android:layout_margin="8dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_pacote_divisor"
+                tools:text="@sample/pacotes.json/pacotes/dias" />
 
             <TextView
                 android:id="@+id/item_pacote_preco"

@@ -11,17 +11,19 @@ import com.drebtchinsky.viagens.ui.adapter.ListaPacotesAdapter;
 
 public class ListaPacotesActivity extends AppCompatActivity {
 
+    public static final String TITLE_APPBAR = "Pacotes";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_pacotes);
 
-        setTitle("Pacotes");
+        setTitle(TITLE_APPBAR);
 
-        inflateList();
+        configuraLista();
     }
 
-    private void inflateList() {
+    private void configuraLista() {
         ListView listaPacotes = findViewById(R.id.lista_pacotes_listview);
         PacoteDAO dao = new PacoteDAO();
         listaPacotes.setAdapter(new ListaPacotesAdapter(dao.lista(),this));

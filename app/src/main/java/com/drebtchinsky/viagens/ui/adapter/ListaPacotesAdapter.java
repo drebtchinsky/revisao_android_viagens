@@ -49,34 +49,23 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
         Pacote pacote = lista.get(position);
 
-        exibeLocal(view, pacote);
-        exibeDias(view, pacote);
-        exibeImagem(view, pacote);
-        exibePreco(view, pacote);
+        carregaInfo(view,R.id.item_pacote_preco, MoedaUtil.formataEmTexto(pacote.getPreco()));
+        carregaInfo(view,R.id.item_pacote_image, ResourcesUtil.getDrawable(context,pacote.getImagem()));
+        carregaInfo(view,R.id.item_pacote_dias, DiasUtil.formataEmTexto(pacote.getDias()));
+        carregaInfo(view,R.id.item_pacote_local, pacote.getLocal());
 
         return view;
     }
 
-    private void exibePreco(View view, Pacote pacote) {
-        TextView preco = view.findViewById(R.id.item_pacote_preco);
-        String moedaBr = MoedaUtil.formataEmTexto(pacote.getPreco());
-        preco.setText(moedaBr);
-    }
-
-    private void exibeImagem(View view, Pacote pacote) {
-        ImageView imagem = view.findViewById(R.id.item_pacote_image);
-        Drawable drawableImagemPacote = ResourcesUtil.getDrawable(context,pacote.getImagem());
+    private void carregaInfo(View view, int p, Drawable d) {
+        ImageView imagem = view.findViewById(p);
+        Drawable drawableImagemPacote = d;
         imagem.setImageDrawable(drawableImagemPacote);
     }
 
-    private void exibeDias(View view, Pacote pacote) {
-        TextView dias = view.findViewById(R.id.item_pacote_dias);
-        String textoDias = DiasUtil.formataEmTexto(pacote.getDias());
+    private void carregaInfo(View view, int p, String s) {
+        TextView dias = view.findViewById(p);
+        String textoDias = s;
         dias.setText(textoDias);
-    }
-
-    private void exibeLocal(View view, Pacote pacote) {
-        TextView local = view.findViewById(R.id.item_pacote_local);
-        local.setText(pacote.getLocal());
     }
 }

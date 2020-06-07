@@ -2,6 +2,7 @@ package com.drebtchinsky.viagens.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -21,6 +22,9 @@ public class ListaPacotesActivity extends AppCompatActivity {
         setTitle(TITLE_APPBAR);
 
         configuraLista();
+
+        Intent intent = new Intent(this, ResumoPacoteActivity.class);
+        startActivity(intent);
     }
 
     private void configuraLista() {
